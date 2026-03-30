@@ -4,7 +4,7 @@
  */
 
 import { useEffect, useRef, useState } from 'react';
-import { Scissors, MapPin, Clock, Instagram, Phone, Star, Award, ShieldCheck, Zap, Menu, X, ArrowRight, ChevronRight } from 'lucide-react';
+import { Scissors, MapPin, Clock, Instagram, Phone, Star, Award, ShieldCheck, Zap, Menu, X, ArrowRight, ChevronRight, MessageCircle } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -441,6 +441,19 @@ export default function App() {
           <p className="text-[8px] font-bold uppercase tracking-[0.5em] text-white/20 italic">Handcrafted for Elite</p>
         </div>
       </footer>
+
+      {/* FLOATING WHATSAPP BUTTON */}
+      <a 
+        href="https://wa.me/5519999999999" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 z-[100] w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_10px_40px_rgba(37,211,102,0.4)] hover:scale-110 active:scale-95 transition-all duration-300 group"
+      >
+        <MessageCircle className="w-8 h-8 group-hover:rotate-12 transition-transform" />
+        <span className="absolute right-full mr-4 bg-white text-black px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl">
+          Falar com Vinni
+        </span>
+      </a>
     </div>
   );
 }
