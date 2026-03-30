@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@theme {
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --color-accent: #ffffff;
+  --color-ink: #050505;
+  --color-paper: #f5f5f5;
+  --color-muted: rgba(255, 255, 255, 0.4);
+  --color-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-ink text-white font-sans antialiased selection:bg-white selection:text-black;
+  }
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  color: transparent;
+}
+
+.glass {
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+}
+
+.reveal-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.service-card {
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.service-card:hover .service-img {
+  transform: scale(1.05);
+}
+
+.service-card:hover .service-overlay {
+  opacity: 0.8;
+}
+
+.bento-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem; /* 24px */
+  padding: 2rem; /* 32px */
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 2rem;
+}
+
+.marquee-content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  min-width: 100%;
+  animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
